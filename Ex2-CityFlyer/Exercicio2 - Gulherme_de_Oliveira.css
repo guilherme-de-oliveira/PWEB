@@ -1,0 +1,118 @@
+body {
+    background-repeat: no-repeat;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana,
+    sans-serif;
+    line-height: 1.5;
+    position: sticky;
+    background-size: 100% 100%;
+    height: 500px;
+    position: relative;
+}
+
+.container {
+    margin: 0 auto;
+    width: 960px;
+}
+
+.nav-container{
+    background-color: #736b6b;
+    border: 1px solid #CCC;
+    border-color: #CCC #999 #999 #CCC;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+
+}
+nav a {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+nav a:hover {
+    background-color: rgb(121, 121, 121);
+}
+
+nav a:link {
+    color: white;
+    text-decoration: none;
+}  
+
+nav a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+article {
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    border-color: #CCC #999 #999 #CCC;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+article h2 {
+    border-bottom: 1px dashed #7E9F19;
+    margin: 0;
+}
+
+article img {
+    border: 1px solid #d3d3d3;
+    float: left;
+    margin: 10px 10px 0 0;
+    padding: 2px;
+    width: 160px;
+    height: 160px;
+    border-radius: 5px;
+}
+
+article a {
+    color: #2C88A7;
+    font-weight: bold;
+}
+
+footer {
+    font-size: 12px;
+    text-align: center;
+}
+
+section {
+    float: left;
+    width: 660px;
+}
+
+.cidade_img {
+    border: 1px solid #d3d3d3;
+    float: left;
+    margin: 10px 10px 0 0;
+    padding: 2px;
+    width: 120px;
+    height: 120px;
+}
+footer {
+    background-color: #736b6b;
+    color: white;
+    border: 1px solid #CCC;
+    border-color: #CCC #999 #999 #CCC;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+#side-img img{
+    /* size: 150% !important; */
+    position: absolute;
+    top: 110px;
+    right: 190px;
+    border: 1px solid #000000;
+    float: left;
+    margin: 10px 10px 0 0;
+    padding: 2px;
+    width: 20%;
+    height: 40%;
+}
