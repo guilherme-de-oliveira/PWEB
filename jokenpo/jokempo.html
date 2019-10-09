@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+<script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="principal">
+        <h1>Jo-Ken-Po</h1><br>
+        <div>
+            <p>Escolha uma opção: </p>
+            <select id="user_choice">
+                <option value="Pedra">Pedra</option>
+                <option value="Papel">Papel</option>
+                <option value="Tesoua">Tesoura</option>
+            </select>
+            
+            <button onclick="computerChoice()">Jogar!</button>
+        </div>
+        <div>
+            <p>
+                <span id="responseComputer"></span>
+            </p>
+            <p id="responseWinner"></p>
+        </div>
+    </div>
+</body>
+</html>

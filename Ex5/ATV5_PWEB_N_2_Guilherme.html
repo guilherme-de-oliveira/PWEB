@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Conta</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h1>Criar conta</h1>
+        <p>
+            <span>Nome: </span>
+            <input id="nome" type="text">
+        </p>
+        <p>
+            <span>Banco: </span>
+            <input id="banco" type="text"/>
+        </p>
+        <p>
+            <span>N Conta: </span>
+            <input id="conta" type="text"/>
+        </p>
+        <p>
+            <span>Saldo: </span>
+            <input id="saldo" type="text"/>
+        </p>
+        <p> <span>Tipo de Conta: </span>
+            <select id="tipoConta" onchange="getConta()">
+                <option value="">Escolha um</option>
+                <option value="corrente">Corrente</option>
+                <option value="poupanca">Poupança</option>
+            </select>
+        </p>
+        <p id="saldoEspecial" hidden>
+            <span>Saldo Especial: </span>
+            <input id="saldoEspecialCreditar" type="text"/>
+        </p>
+        
+        <p id="poupanca" hidden>
+            <span>Juros: </span>
+            <input id="juros" type="text"/>
+            <span>Data Vencimento: </span>
+            <input id="dataVencimentos" type="date"/>
+        </p>
+        <button onclick="criarConta()">Criar Conta</button>
+        
+        <div id="resultado"></div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    function getConta(){
+        var tipoConta = document.getElementById('tipoConta').value;
+        
+        return showSelected(tipoConta);
+    }
+    
+    function showSelected(tipoConta){
+        if(tipoConta == 'corrente') {
+            var container = document.getElementById('saldoEspecial');
+            container.style.display = 'block';
+            var containerClose = document.getElementById('poupanca');
+            containerClose.style.display = 'none';
+        } else {
+            var container = document.getElementById('poupanca');
+            container.style.display = 'block';
+            
+            var containerClose = document.getElementById('saldoEspecial');
+            containerClose.style.display = 'none';
+        }
+    }
+    
+    function Conta() {
+        var nome;
+        var banco;
+        var numeroConta;
+        var saldo;
+        
+        //Geters
+        this.getNome = function() {
+            return nome;
+        }
+        this.getBanco = function() {
+            return banco;
+        }
+        this.getNumeroConta = function() {
+            return numeroConta;
+        }
+        this.getSaldo = function() {
+            return saldo;
+        }
+        
+        //Seters
+        this.setNome = function(value) {
+            nome = value;
+        }
+        this.setBanco = function(value) {
+            banco = value;
+        }
+        this.setNumeroConta = function(value) {
+            numeroConta = value;
+        }
+        this.setSaldo = function(value) {
+            saldo = value;
+        }
+    }
+    
+    function criarConta() {
+        var nome = document.getElementById('nome').value;
+        var banco = document.getElementById('banco').value;
+        var conta = document.getElementById('conta').value;
+        var saldo = document.getElementById('saldo').value;
+        var tipoConta = document.getElementById('tipoConta').value;
+
+        var novaConta = new Conta();
+        
+        novaConta.setNome(nome);
+        novaConta.setBanco(banco);
+        novaConta.setNumeroConta(conta);
+        novaConta.setSaldo(saldo);
+        
+        if(tipoConta == 'corrente'){
+            var saldoEspecial = document.getElementById('saldoEspecialCreditar').value;
+            
+            contaCorrente.prototype = new Conta();
+            
+
+        }else{
+            var juros = document.getElementById('juros').value;
+            var dataVencimentos = document.getElementById('dataVencimentos').value;
+        }
+//        console.log(novaConta.getBanco);
+    }
+    
+    
+    
+</script>
+<style>
+    #resultado {
+        font-size: 20px;
+        font-style: bold;
+    }
+</style>

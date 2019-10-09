@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h1>Calcule a área</h1>
+        <p>
+            <span>Insira a altura: </span>
+            <input id="altura" type="number"/>
+        </p>
+        <p>
+            <span>Insira a largura: </span>
+            <input id="largura" type="number"/>
+        </p>
+        
+        <button onclick="calcRetangulo()">Calcular</button>
+        
+        <div id="resultado"></div>
+        
+    </div>
+
+</body>
+</html>
+
+<script>
+    
+    function Retangulo(altura, largura) {
+        this.altura = altura;
+        this.largura = largura;
+        this.area = altura * largura;
+        
+    }
+    
+    function calcRetangulo() {
+        var altura = document.getElementById('altura').value;
+        var largura = document.getElementById('largura').value;
+        
+        var objRetangulo = new Retangulo(altura, largura);
+        console.log(objRetangulo);
+        
+        exibirArea(objRetangulo);
+    }
+    
+    function exibirArea(objRetangulo) {
+        var response = document.getElementById('resultado');
+        response.innerHTML = `<p>A área tem ${objRetangulo.area} m²</p>`;
+    }
+    
+    
+</script>
+<style>
+    #resultado {
+        font-size: 20px;
+        font-style: bold;
+    }
+</style>
