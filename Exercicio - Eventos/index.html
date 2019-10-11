@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <script src="./assets/scripts.js"></script>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+    <h1>Abra a Janela</h1>
+    <div id="janelas">
+        <p id="janelaAberta">
+            <img src="./assets/imagem/janelaAberta.jpg" onmouseover="fecharJanela()">
+        </p>
+        <p id="janelaFechada" hidden>
+            <img src="./assets/imagem/janelaFechada.jpg" onmouseout="abrirJanela()" onclick="quebrarJanela()">
+        </p>
+    </div>
+    <div id="janelaQuebrada" hidden>
+        <img src="./assets/imagem/janelaQuebrada.jpg">
+        <p>A janela Quebrou!</p>
+    </div>
+</body>
+</html>
+
+<style>
+body{
+    text-align: center;
+}
+image{
+    width: 300px;
+    height: 250px;
+}
+
+</style>
