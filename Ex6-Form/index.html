@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <form name="formulario" class="formulario">
+        <p>Nome</p>
+        <input id="nome" type="text" name="nome"/>
+
+        <p>Email</p>
+        <input id="email" type="text"/>
+
+        <p>Comentário</p>
+        <textarea id="comentario" type="text" ></textarea>
+
+        <p>Pesquisa:</p>
+        <span>Primeira vez nesta página?</span>
+
+        <span><input type="radio" value="sim" name="choose" id="sim" checked/>Sim</span>
+        <span><input type="radio" value="nao" name="choose" id="nao"/>Não</span>
+        
+        <p>
+            <button type="button" onclick="validate()">Enviar</button>
+            <button type="reset">Limpar</button>
+        </p>
+    </form>
+</body>
+</html>
+
+<script>
+    function validate(){
+        var errorStat = '';
+        var cadastroStat = '';
+        var nome = document.formulario.elements[0].value;
+        var email = document.getElementById('email').value;
+        var comentario = document.getElementById('comentario').value;
+        var pesquisa = '';
+
+        document.getElementById('sim').checked ? pesquisa = 'sim' : pesquisa = 'nao';
+
+        nome.length>10 ? cadastroStat = 'OK' : errorStat = 'Nome menos de 10 char\n';
+        
+        email.includes('@') ? cadastroStat = 'OK' : errorStat += 'Email não contém @\n';
+        email.includes('.') ? cadastroStat = 'OK' : errorStat += 'Email não contém ponto \'.\'\n';
+        
+        comentario.length<20 ? errorStat += 'Comentário menos de 20 char\n' : cadastroStat = 'OK';
+        
+        pesquisa == 'nao' ? cadastroStat += "\n\nQue bom que você voltou a visitar esta página!":
+            cadastroStat += "\n\nVolte sempre à está página!";
+        
+        errorStat != '' ? alert('Erro:\n'+ errorStat) : alert('Cadastro realizado com sucesso!\n' + cadastroStat);
+        console.log('err'+errorStat)
+        console.log(cadastroStat)
+    }
+</script>
+<style>
+body{
+    text-align: center;
+    font-family: "Century Gothic";
+}
+
+.formulario{
+    border-style: solid;
+    border-width: 2px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+p{
+    font-size: 1.5rem;
+}
+</style>
